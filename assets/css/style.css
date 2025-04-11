@@ -7,8 +7,13 @@ body {
   
   .container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row; /* Main content first, then sidebar to the right */
     min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
   }
   
   .sidebar {
@@ -19,38 +24,41 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
     position: sticky;
     top: 0;
-    height: 100vh;
+    right: 0;
   }
   
-  .sidebar h1.site-title {
+  .site-title {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ffcb05;
   }
   
-  .sidebar .nav-links ul {
+  .nav-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   
-  .sidebar .nav-links li {
+  .nav-links li {
     margin: 15px 0;
   }
   
-  .sidebar .nav-links a {
+  .nav-links a {
     color: #eee;
     text-decoration: none;
   }
   
-  .sidebar .nav-links a:hover {
+  .nav-links a:hover {
     color: #ffcb05;
   }
   
   .sidebar-footer {
     font-size: 12px;
     line-height: 1.4;
+    margin-top: auto;
   }
   
   .sidebar-footer a {
@@ -60,7 +68,7 @@ body {
   
   .sidebar-footer a:hover {
     color: #ffcb05;
-  }
+  }  
   
   .main-content {
     flex: 1;
