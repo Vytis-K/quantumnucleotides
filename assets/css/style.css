@@ -7,13 +7,8 @@ body {
   
   .container {
     display: flex;
-    flex-direction: row; /* Main content first, then sidebar to the right */
+    flex-direction: row-reverse;
     min-height: 100vh;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 40px;
   }
   
   .sidebar {
@@ -24,41 +19,38 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
     position: sticky;
     top: 0;
-    right: 0;
+    height: 100vh;
   }
   
-  .site-title {
+  .sidebar h1.site-title {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ffcb05;
   }
   
-  .nav-links ul {
+  .sidebar .nav-links ul {
     list-style: none;
     padding: 0;
-    margin: 0;
   }
   
-  .nav-links li {
+  .sidebar .nav-links li {
     margin: 15px 0;
   }
   
-  .nav-links a {
+  .sidebar .nav-links a {
     color: #eee;
     text-decoration: none;
   }
   
-  .nav-links a:hover {
+  .sidebar .nav-links a:hover {
     color: #ffcb05;
   }
   
   .sidebar-footer {
     font-size: 12px;
     line-height: 1.4;
-    margin-top: auto;
   }
   
   .sidebar-footer a {
@@ -68,7 +60,7 @@ body {
   
   .sidebar-footer a:hover {
     color: #ffcb05;
-  }  
+  }
   
   .main-content {
     flex: 1;

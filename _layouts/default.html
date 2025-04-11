@@ -1,11 +1,17 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | Quantum Nucleotides</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
     <div class="main-content">
       {{ content }}
     </div>
-  
     <aside class="sidebar">
       <h1 class="site-title">Quantum Nucleotides</h1>
-  
       <nav class="nav-links">
         <ul>
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -17,14 +23,14 @@
           <li><a href="{{ '/archive' | relative_url }}">Archive</a></li>
         </ul>
       </nav>
-  
       <footer class="sidebar-footer">
         <p>Vytis Krupovnickas © {{ site.time | date: '%Y' }}</p>
         <p>
-          <a href="https://github.com/YOUR_USERNAME">GitHub</a> · 
+          <a href="https://github.com/Vytis-K">GitHub</a> · 
           <a href="https://twitter.com/YOUR_HANDLE">Twitter</a>
         </p>
       </footer>
     </aside>
   </div>
-  
+</body>
+</html>
