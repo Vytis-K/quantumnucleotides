@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Lectures
+permalink: /lectures/
 ---
 
-# Projects
+# Lectures
 
 Coming soon...

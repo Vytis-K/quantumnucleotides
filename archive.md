@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Archive
+permalink: /archive/
 ---
 
-# Projects
+# Archive
 
 Coming soon...

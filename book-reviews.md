@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Book Reviews
+permalink: /book-reviews/
 ---
 
-# Projects
+# Book Reviews
 
 Coming soon...

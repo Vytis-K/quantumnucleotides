@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Resume
+permalink: /resume/
 ---
 
-# Projects
+# Resume
 
 Coming soon...

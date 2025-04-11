@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
-permalink: /projects/
+title: Notes
+permalink: /notes/
 ---
 
-# Projects
+# Notes
 
 Coming soon...
