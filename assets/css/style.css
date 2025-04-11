@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #fdfdfd;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background: #1c1c1c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  
+  .sidebar h1.site-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffcb05;
+  }
+  
+  .sidebar .nav-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar .nav-links li {
+    margin: 15px 0;
+  }
+  
+  .sidebar .nav-links a {
+    color: #eee;
+    text-decoration: none;
+  }
+  
+  .sidebar .nav-links a:hover {
+    color: #ffcb05;
+  }
+  
+  .sidebar-footer {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .sidebar-footer a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  .sidebar-footer a:hover {
+    color: #ffcb05;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .post-card {
+    background: white;
+    border-left: 4px solid #ffcb05;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .post-card h3 {
+    margin-top: 0;
+  }
+  
+  .post-card a {
+    text-decoration: none;
+    color: #007acc;
+  }
+  
+  .post-date {
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
