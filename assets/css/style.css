@@ -95,3 +95,10 @@ body {
     margin-bottom: 10px;
   }
   
+  .post {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
