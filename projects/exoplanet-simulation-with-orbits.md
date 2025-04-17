@@ -12,6 +12,6 @@ By simulating the motion of stars, planets, and other objects under gravitationa
 
 The simulation is written in Python, leveraging numerical methods and physical modeling to approximate planetary systems.
 
-🔗 [View the code on GitHub](https://github.com/yourusername/nbody_simulation)
+🔗 [View the code on GitHub](https://github.com/Vytis-K/nbody_simulation)
 
 Stay tuned—more visualizations, animations, and machine learning experiments coming soon!
