@@ -12,21 +12,21 @@ body {
   }
   
   .sidebar {
+    box-sizing: border-box;
     width: 250px;
     background: #1c1c1c;
     color: white;
     padding: 20px;
-  
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  
-    position: sticky;
-    top: 0;
-  
-    /* instead of height:100vh; */
-    max-height: 100vh;
-    overflow-y: auto;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
   
   .sidebar h1.site-title {
