@@ -6,4 +6,4 @@ permalink: /archive/
 
 # Archive
 
-Coming soon...
+I'll be posting old projects here.

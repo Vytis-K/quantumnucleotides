@@ -6,4 +6,4 @@ permalink: /lectures/
 
 # Lectures
 
-Coming soon...
+I'll be posting my explorations into different topics here.
