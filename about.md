@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Notes
-permalink: /notes/
+title: About
+permalink: /about/
 ---
 
-# Notes
+# About
 
 Coming soon...
