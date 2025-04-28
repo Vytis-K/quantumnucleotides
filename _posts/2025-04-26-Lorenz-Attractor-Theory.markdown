@@ -11,15 +11,15 @@ In this post I aim to outline and explain the Lorenz attractor, and show how I c
 The Lorenz attractor is a set of chaotic solutions to the following system of three differential equations:
 
 $$
-dxdt=σ(y−x)\frac{dx}{dt} = \sigma (y - x) 
+\frac{dx}{dt} = \sigma (y - x) 
 $$
 
 $$
-dydt=x(ρ−z)−y\frac{dy}{dt} = x(\rho - z) - y 
+\frac{dy}{dt} = x(\rho - z) - y 
 $$
 
 $$
-dzdt=xy−βz\frac{dz}{dt} = xy - \beta z
+\frac{dz}{dt} = xy - \beta z
 $$
 
 Edward Lorenz, after whom this solution is named, formalized the Lorenz attractor in 1963 while studying atmospheric convection. This system follows well-defined rules but behaves unpredictably as it evolves, and thus falls into the category of “deterministic chaos”. What’s interesting is that when these equations are solved and plotted on a three dimensional graph, you get a butterfly-shaped structure (this is actually where the term “butterfly effect” comes from). If we consider two neighboring points, we observe that they diverge rapidly from each other, and their divergence is heavily dependent on the initial conditions - however, this motion tends to be relegated to a bounded, fractal-like region, in which the same pattern is observed at smaller and smaller scales.
@@ -39,45 +39,33 @@ The system consists of two parallel plates of differing temperatures, so we assu
 Having established our simplifying assumptions for the model, we then expand the fluid velocity and temperature fields in terms of Fourier series, keeping only the three most dominant terms: the convection roll intensity, the horizontal temperature variation, and the vertical temperature variation. (Note: cutting only a few modes in a Fourier expansion is called Galerkin truncation.) The fluid velocity is given as:
 
 $$
-\[
 \mathbf{v} = (u(x,z,t), w(x,z,t))
-\]
 $$
 
 where:
 
-$$
-\( u(x,z,t) \) = horizontal velocity (in x),
-$$
+$u(x,z,t)$ = horizontal velocity (in x),
 
-$$
-\( w(x,z,t) \) = vertical velocity (in z).
-$$
+$w(x,z,t)$ = vertical velocity (in z).
 
 However, because Lorenz wanted a simple model, he made an assumption about the incompressibility of the function:
 
 $$
-\[
 \frac{\partial u}{\partial x} + \frac{\partial w}{\partial z} = 0
-\]
 $$
 
-And further used a stream function $\( \psi(x,z,t) \)$ to satisfy the incompressibility condition:
+And further used a stream function $\psi(x,z,t)$ to satisfy the incompressibility condition:
 
 $$
-  \[
   u = \frac{\partial \psi}{\partial z}, \quad w = -\frac{\partial \psi}{\partial x}
-  \]
 $$
 
-So once you know $\( \psi(x,z,t) \)$, you can compute both $\( u \)$ and $\( w \)$.
+So once you know $\psi(x,z,t)$, you can compute both $u$ and $w$.
 
 The temperature field is given as:
 
 $$
-\[
 T(x,z,t) = B(t) \cos\left(\frac{\pi x}{L}\right) \sin(\pi z) + C(t) \sin(2\pi z)
-\]
 $$
 
 where:
@@ -89,9 +77,7 @@ $\( C(t) \)$ = amplitude of vertical temperature deviation.
 Lorenz expanded the fields into simple trigonometric modes in order to expand the above equations in terms of Fourier series. He proposed the following stream function for the fluid velocity:
 
 $$
-\[
 \psi(x, z, t) = A(t) \sin\left(\pi z\right) \sin\left(\frac{\pi x}{L}\right)
-\]
 $$
 
 where:
@@ -102,17 +88,13 @@ $\( L \)$ is the aspect ratio of the domain.
 From this we can define the horizontal velocity as:
 
 $$
-  \[
   u(x,z,t) = \frac{\partial \psi}{\partial z} = A(t) \pi \cos(\pi z) \sin\left(\frac{\pi x}{L}\right)
-  \]
 $$
 
 And the vertical velocity as:
 
 $$
-  \[
   w(x,z,t) = -\frac{\partial \psi}{\partial x} = -A(t) \frac{\pi}{L} \sin(\pi z) \cos\left(\frac{\pi x}{L}\right)
-  \]
 $$
 
 But remember, only a few modes were kept, those being the lowest-frequency, or largest scale, patterns in the oscillations of the field. The convection mode captures the rise and fall of the fluid; the horizontal temperature mode captures how the temperature gradient develops; and the vertical temperature mode captures how the temperature’s vertical profile is nonlinear, describing the bulges in the temperature front.
@@ -120,25 +102,19 @@ But remember, only a few modes were kept, those being the lowest-frequency, or l
 Next, we define a few variables to build our system of equations. First, we define $\( x(t) \)$, the intensity of the convection rolls; $\( y(t) \)$, the temperature difference across the rolls and horizontal temperature variation; and $\( z(t) \)$, the vertical temperature deviation from linear. We refer to these as the amplitudes of the main modes of motion. We then substitute the Fourier series into the full fluid equations to get the following three ordinary differential equations:
 
 $$
-\[
 \frac{dx}{dt} = \sigma (y - x)
-\]
 $$
 
 Where sigma is the Prandtl number, measuring the ratio of fluid viscosity to thermal diffusivity,
 
 $$
-\[
 \frac{dy}{dt} = x (\rho - z) - y
-\]
 $$
 
 Where rho is the Rayleigh number, measuring how strong the temperature gradient is across the plates, and
 
 $$
-\[
 \frac{dz}{dt} = xy - \beta z
-\]
 $$
 
 Where beta is the geometry of the convection rolls.
