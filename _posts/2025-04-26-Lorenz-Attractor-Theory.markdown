@@ -44,9 +44,9 @@ $$
 
 where:
 
-$u(x,z,t)$ = horizontal velocity (in x),
+$$u(x,z,t)$$ = horizontal velocity (in x),
 
-$w(x,z,t)$ = vertical velocity (in z).
+$$w(x,z,t)$$ = vertical velocity (in z).
 
 However, because Lorenz wanted a simple model, he made an assumption about the incompressibility of the function:
 
@@ -60,7 +60,7 @@ $$
   u = \frac{\partial \psi}{\partial z}, \quad w = -\frac{\partial \psi}{\partial x}
 $$
 
-So once you know \( \psi(x,z,t) \), you can compute both $u$ and $w$.
+So once you know $$ \psi(x,z,t) $$, you can compute both $$u$$ and $$w$$.
 
 The temperature field is given as:
 
