@@ -13,9 +13,11 @@ The Lorenz attractor is a set of chaotic solutions to the following system of th
 $$
 dxdt=σ(y−x)\frac{dx}{dt} = \sigma (y - x) 
 $$
+
 $$
 dydt=x(ρ−z)−y\frac{dy}{dt} = x(\rho - z) - y 
 $$
+
 $$
 dzdt=xy−βz\frac{dz}{dt} = xy - \beta z
 $$
@@ -36,77 +38,108 @@ The system consists of two parallel plates of differing temperatures, so we assu
 
 Having established our simplifying assumptions for the model, we then expand the fluid velocity and temperature fields in terms of Fourier series, keeping only the three most dominant terms: the convection roll intensity, the horizontal temperature variation, and the vertical temperature variation. (Note: cutting only a few modes in a Fourier expansion is called Galerkin truncation.) The fluid velocity is given as:
 
+$$
 \[
 \mathbf{v} = (u(x,z,t), w(x,z,t))
 \]
+$$
+
 where:
+
+$$
 \( u(x,z,t) \) = horizontal velocity (in x),
+$$
+
+$$
 \( w(x,z,t) \) = vertical velocity (in z).
+$$
 
 However, because Lorenz wanted a simple model, he made an assumption about the incompressibility of the function:
 
+$$
 \[
 \frac{\partial u}{\partial x} + \frac{\partial w}{\partial z} = 0
 \]
+$$
 
-And further used a stream function \( \psi(x,z,t) \) to satisfy the incompressibility condition:
+And further used a stream function $\( \psi(x,z,t) \)$ to satisfy the incompressibility condition:
 
+$$
   \[
   u = \frac{\partial \psi}{\partial z}, \quad w = -\frac{\partial \psi}{\partial x}
   \]
+$$
 
-So once you know \( \psi(x,z,t) \), you can compute both \( u \) and \( w \).
+So once you know $\( \psi(x,z,t) \)$, you can compute both $\( u \)$ and $\( w \)$.
 
 The temperature field is given as:
 
+$$
 \[
 T(x,z,t) = B(t) \cos\left(\frac{\pi x}{L}\right) \sin(\pi z) + C(t) \sin(2\pi z)
 \]
+$$
 
 where:
-\( B(t) \) = amplitude of horizontal temperature variation,
-\( C(t) \) = amplitude of vertical temperature deviation.
+
+$\( B(t) \)$ = amplitude of horizontal temperature variation,
+
+$\( C(t) \)$ = amplitude of vertical temperature deviation.
 
 Lorenz expanded the fields into simple trigonometric modes in order to expand the above equations in terms of Fourier series. He proposed the following stream function for the fluid velocity:
 
+$$
 \[
 \psi(x, z, t) = A(t) \sin\left(\pi z\right) \sin\left(\frac{\pi x}{L}\right)
 \]
+$$
 
 where:
-\( A(t) \) is a time-dependent amplitude,
-\( L \) is the aspect ratio of the domain.
+
+$\( A(t) \)$ is a time-dependent amplitude,
+$\( L \)$ is the aspect ratio of the domain.
 
 From this we can define the horizontal velocity as:
 
+$$
   \[
   u(x,z,t) = \frac{\partial \psi}{\partial z} = A(t) \pi \cos(\pi z) \sin\left(\frac{\pi x}{L}\right)
   \]
+$$
 
 And the vertical velocity as:
 
+$$
   \[
   w(x,z,t) = -\frac{\partial \psi}{\partial x} = -A(t) \frac{\pi}{L} \sin(\pi z) \cos\left(\frac{\pi x}{L}\right)
   \]
+$$
 
 But remember, only a few modes were kept, those being the lowest-frequency, or largest scale, patterns in the oscillations of the field. The convection mode captures the rise and fall of the fluid; the horizontal temperature mode captures how the temperature gradient develops; and the vertical temperature mode captures how the temperature’s vertical profile is nonlinear, describing the bulges in the temperature front.
 
-Next, we define a few variables to build our system of equations. First, we define \( x(t) \), the intensity of the convection rolls; \( y(t) \), the temperature difference across the rolls and horizontal temperature variation; and \( z(t) \), the vertical temperature deviation from linear. We refer to these as the amplitudes of the main modes of motion. We then substitute the Fourier series into the full fluid equations to get the following three ordinary differential equations:
+Next, we define a few variables to build our system of equations. First, we define $\( x(t) \)$, the intensity of the convection rolls; $\( y(t) \)$, the temperature difference across the rolls and horizontal temperature variation; and $\( z(t) \)$, the vertical temperature deviation from linear. We refer to these as the amplitudes of the main modes of motion. We then substitute the Fourier series into the full fluid equations to get the following three ordinary differential equations:
 
+$$
 \[
 \frac{dx}{dt} = \sigma (y - x)
 \]
+$$
+
 Where sigma is the Prandtl number, measuring the ratio of fluid viscosity to thermal diffusivity,
 
+$$
 \[
 \frac{dy}{dt} = x (\rho - z) - y
 \]
+$$
 
 Where rho is the Rayleigh number, measuring how strong the temperature gradient is across the plates, and
 
+$$
 \[
 \frac{dz}{dt} = xy - \beta z
 \]
+$$
 
 Where beta is the geometry of the convection rolls.
 
@@ -118,25 +151,41 @@ We can analyze the behavior of the Lorenz attractor ourselves by building it in 
 
 I’ve written an implementation of the Lorenz system in x86-64 assembly (w[You can find the full Assembly code here on GitHub](https://github.com/Vytis-K/lorenz_system_assembly)), using the Runge-Kutta 4th order method (RK4) to numerically integrate the differential equations. RK4 is a numerical algorithm (a method for solving an equation step-by-step with numbers instead of symbols) for solving ordinary differential equations. It samples the slopes of the data at several intermediate points to give us higher precision, which is ideal for solving a chaotic system where the behavior can be unpredictable. For a general system:
 
-
+$$
 \frac{dy}{dt} = f(y, t)
+$$
 
 The RK4 update rule is:
 
+$$
 k_1 = f(y_n, t_n) 
+$$
+
+$$
 k_2 = f\left(y_n + \frac{h}{2}k_1, t_n + \frac{h}{2}\right)
+$$
+
+$$
 k_3 = f\left(y_n + \frac{h}{2}k_2, t_n + \frac{h}{2}\right)
+$$
+
+$$
 k_4 = f\left(y_n + hk_3, t_n + h\right)
+$$
 
 So then we can solve for the next value:
 
+$$
 y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+$$
 
 where h is the time step. Essentially, RK4 uses a weighted average of the slopes to solve for the next value. The Lorenz attractor uses three coupled ODEs described above, so we have to apply RK4 separately to each variable x, y, and z. 
 
 Assembly is machine code, communicating directly with the machine. There are no variables or functions, and we have to manage the memory and calculation steps directly ourselves. It is a bit of a headache having to manually control every element of the routine, especially for someone like me coming from a Python-heavy background where these things are not only taken for granted but not even considered. As a broad overview of what’s going on in the code, first I initialize x=0, y=1, and z=1 and load the total number of steps, 10000, into the register ecx. Then, in the main loop, .loop, I save the original state x, y, and z to variables orig_x, orig_y, and orig_z. I compute k1 for each variable in derivatives for the initial point and store those values in their corresponding variables. Then, I restore the original state again, update them with midpoint_update, call derivates again, and compute k2. Doing this for k3 and k4, I then computer the RK4 step with the formula:
 
+$$
 x_{\text{new}} = x_{\text{old}} + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+$$
 
 I use printf to return the values of x, y, and z after the update, and then decrement ecx. I check if ecx is zero, and if not, loop through the whole function again to get the next update in the steps. This builds my Lorenz attractor in three dimensions, the plot of which is shown below.
 
