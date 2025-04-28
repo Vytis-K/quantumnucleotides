@@ -3,15 +3,22 @@ layout: post
 title:  "Developing a Lorenz Attractor in Assembly"
 date:   2025-04-26 15:46:00 -0500
 categories: lorenz-attractor
+math: true
 ---
 
 In this post I aim to outline and explain the Lorenz attractor, and show how I can build a simulation for the attractor in the Assembly programming language.
 
 The Lorenz attractor is a set of chaotic solutions to the following system of three differential equations:
 
+$$
 dxdt=σ(y−x)\frac{dx}{dt} = \sigma (y - x) 
+$$
+$$
 dydt=x(ρ−z)−y\frac{dy}{dt} = x(\rho - z) - y 
+$$
+$$
 dzdt=xy−βz\frac{dz}{dt} = xy - \beta z
+$$
 
 Edward Lorenz, after whom this solution is named, formalized the Lorenz attractor in 1963 while studying atmospheric convection. This system follows well-defined rules but behaves unpredictably as it evolves, and thus falls into the category of “deterministic chaos”. What’s interesting is that when these equations are solved and plotted on a three dimensional graph, you get a butterfly-shaped structure (this is actually where the term “butterfly effect” comes from). If we consider two neighboring points, we observe that they diverge rapidly from each other, and their divergence is heavily dependent on the initial conditions - however, this motion tends to be relegated to a bounded, fractal-like region, in which the same pattern is observed at smaller and smaller scales.
 
