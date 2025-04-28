@@ -29,11 +29,11 @@ Lorenz approached the problem in the context of atmospheric convection. He was s
 The system consists of two parallel plates of differing temperatures, so we assume there is 2D flow in the x and z directions (horizontal and vertical). We will also assume periodic and simple boundary conditions. This condition is a bit funny - essentially, we’re assuming that, like in a 2D video game, when you move off-screen to the right you loop back around to the other side, meaning we won’t have to really consider the horizontal boundaries and assume the system is self-contained. We’re also assuming that the plates themselves are just ideal plates with no unexpected (in a mathematical rather than physical sense) behaviors. Finally, we keep only the largest modes of motion, truncating the higher-frequency variations. A mode of motion is a specific pattern of movement for a general object, which is easier to picture when you imagine the ripples in a pond. When we say we’re truncating the higher-frequency variations, we’re looking at the modes of motion of air - the swirling currents created, like on a windy day - and removing the eddies and and tiny ripples so we can see the bigger picture, the convections created by temperature gradients within the fluid.
 
 <p align="center">
-  <img src="/assets/images/hot-and-cold-plate.png" alt="Model of Lorenz system">
+  <img src="/assets/images/modes_of_motion.png" alt="3D diagram of modes of motion" style="max-width: 100%; height: auto;">
 </p>
 
 <p align="center">
-  <img src="/assets/images/modes_of_motion.png" alt="3D diagram of modes of motion">
+  <img src="/assets/images/modes_of_motion.png" alt="3D diagram of modes of motion" style="max-width: 100%; height: auto;">
 </p>
 
 Having established our simplifying assumptions for the model, we then expand the fluid velocity and temperature fields in terms of Fourier series, keeping only the three most dominant terms: the convection roll intensity, the horizontal temperature variation, and the vertical temperature variation. (Note: cutting only a few modes in a Fourier expansion is called Galerkin truncation.) The fluid velocity is given as:
@@ -70,9 +70,9 @@ $$
 
 where:
 
-$\( B(t) \)$ = amplitude of horizontal temperature variation,
+$$\( B(t) \)$$ = amplitude of horizontal temperature variation,
 
-$\( C(t) \)$ = amplitude of vertical temperature deviation.
+$$\( C(t) \)$$ = amplitude of vertical temperature deviation.
 
 Lorenz expanded the fields into simple trigonometric modes in order to expand the above equations in terms of Fourier series. He proposed the following stream function for the fluid velocity:
 
@@ -82,8 +82,8 @@ $$
 
 where:
 
-$\( A(t) \)$ is a time-dependent amplitude,
-$\( L \)$ is the aspect ratio of the domain.
+$$\( A(t) \)$$ is a time-dependent amplitude,
+$$\( L \)$$ is the aspect ratio of the domain.
 
 From this we can define the horizontal velocity as:
 
@@ -99,7 +99,7 @@ $$
 
 But remember, only a few modes were kept, those being the lowest-frequency, or largest scale, patterns in the oscillations of the field. The convection mode captures the rise and fall of the fluid; the horizontal temperature mode captures how the temperature gradient develops; and the vertical temperature mode captures how the temperature’s vertical profile is nonlinear, describing the bulges in the temperature front.
 
-Next, we define a few variables to build our system of equations. First, we define $\( x(t) \)$, the intensity of the convection rolls; $\( y(t) \)$, the temperature difference across the rolls and horizontal temperature variation; and $\( z(t) \)$, the vertical temperature deviation from linear. We refer to these as the amplitudes of the main modes of motion. We then substitute the Fourier series into the full fluid equations to get the following three ordinary differential equations:
+Next, we define a few variables to build our system of equations. First, we define $$\( x(t) \)$$, the intensity of the convection rolls; $$\( y(t) \)$$, the temperature difference across the rolls and horizontal temperature variation; and $$\( z(t) \)$$, the vertical temperature deviation from linear. We refer to these as the amplitudes of the main modes of motion. We then substitute the Fourier series into the full fluid equations to get the following three ordinary differential equations:
 
 $$
 \frac{dx}{dt} = \sigma (y - x)
