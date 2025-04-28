@@ -60,7 +60,7 @@ $$
   u = \frac{\partial \psi}{\partial z}, \quad w = -\frac{\partial \psi}{\partial x}
 $$
 
-So once you know $\psi(x,z,t)$, you can compute both $u$ and $w$.
+So once you know \( \psi(x,z,t) \), you can compute both $u$ and $w$.
 
 The temperature field is given as:
 
