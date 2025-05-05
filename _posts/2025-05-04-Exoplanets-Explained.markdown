@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Exoplanets, and Methods of Detecting Them"
-date:   2025-05-04 23:53:00 -0500
+date:   2025-05-04 20:53:00 -0500
 categories: exoplanets-ml
 math: true
 ---
@@ -114,10 +114,10 @@ Where the brightness of the star with no planets in front of it is 1.000, and th
 
 | Wavelength (nm) | Relative Absorption (%) | Molecule |
 |----------|----------|----------|
-| 589   | 0.15   | Na   |
+| 589   | 0.15   | $$Na$$   |
 | 656   | 0.10   | $$H \alpha$$   |
 | 940   | 0.25   | $$H_{2}O$$   |
-| 2300   | 0.30   | CO   |
+| 2300   | 0.30   | $$CO$$   |
 | 3300   | 0.20   | $$CH_{4}$$   |
 
 There are more details that go into this than what I’ve described. For instance, since this is such a sensitive process, we would want to use a space-based telescope to avoid any atmospheric inference. We would have to observe multiple transits to make sure we’re not just seeing space dust or anything else in the interstellar medium that appears like a planet. We would need to have a very good recording of the light curve, so we’re not accidentally misidentifying solar spots or flares as our planet. Fortunately, a lot of data is generated through this process, which means we can apply nifty data analysis tricks to aid in exoplanet identification.
