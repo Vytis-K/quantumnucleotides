@@ -13,7 +13,7 @@ An exoplanet, or extrasolar planet, is a name referring to planets which orbit s
 Astronomers usually use two main methods of detecting exoplanets, although there are others which are planned to be used in future launches. The first technique is the Doppler method, where one measures the wobble in a star’s orbit due to the gravitational pull of orbiting planets. A planet and star will orbit about their common center of mass, which causes the star to appear to wobble a bit. 
 
 <p align="center">
-  <img src="/assets/gifs/doppler_method_star_wobble.gif" alt="Animation of star wobble during orbit">
+  <img src="/assets/gifs/doppler_method_star_wobble.gif" alt="Animation of star wobble during orbit">style="max-width: 100%; height: auto;">
 </p>
 
 This wobbling produces a period redshift and blueshift in the star’s spectrum lines. We measure this quantity along the line of sight at which we observe the system. What we measure in practice is the radial velocity, which is the observed change in the star’s velocity along the line of sight due to the orbiting planet:
@@ -75,7 +75,7 @@ $$R_\star$$: radius of the star
 $$\delta$$: proportional drop in light intensity
 
 <p align="center">
-  <img src="/assets/images/transit_graph.png" alt="Lightcurve of star with and without transit">
+  <img src="/assets/images/transit_graph.png" alt="Lightcurve of star with and without transit">style="max-width: 100%; height: auto;">
 </p>
 
 We refer to the time between transits as the orbital period, denoted as P. Once we find the period, we can calculate the semi-major axis a of the planet’s orbit using the following equation:
@@ -125,7 +125,7 @@ There are more details that go into this than what I’ve described. For instanc
 There are multiple transit detection algorithms, but I’ll focus on two for my benchmarking analysis. The first is the box least squares method (BLS), which finds the periodic dips in a light curve caused by a planet moving in front of a star by assuming that the transit signal looks like a box. That means that we are expecting there to be a flat baseline amount of light emitted by the star, then a dip from the planet passing by, and then the flat baseline again. First, we pick a trial period, say two days, where we are observing the transit of the star. Then we align all data points in the light curve to modulo two days, the period. We then fit a box to the folded light curve, and then we check to see how well the box explains the data by seeing how well it minimizes residuals between the data and the model. We quantify the fit with a score we call the power. We do this for thousands of trial periods and durations, and choose the one with the highest power. 
 
 <p align="center">
-  <img src="/assets/images/bls_box_plot.png" alt="BLS Transit box plot">
+  <img src="/assets/images/bls_box_plot.png" alt="BLS Transit box plot">style="max-width: 100%; height: auto;">
 </p>
 
 Then, for each period the algorithm will fold the light curve - meaning that the data points are aligned with the period - to a box model, and compute a power to indicate how strong the signal is. With BLS we are sliding a box-shaped model over the data, where a height of one indicates we are out of a transit and a lower depth inside a transit. The box location is at the T0 of the trial. Power is a measure of how box-shaped the transit signal is for the data within a given trial period. The equation for it is:
@@ -183,19 +183,19 @@ $$
 $$
 
 <p align="center">
-  <img src="/assets/gifs/2d_orbit_animation.gif" alt="2D animation of planet orbits">
+  <img src="/assets/gifs/2d_orbit_animation.gif" alt="2D animation of planet orbits">style="max-width: 100%; height: auto;">
 </p>
 
 Real systems are three dimensional, and thus also have the other dimensions of inclination and eccentricity. The inclination $$i$$ is the tilt of the planet’s orbit’s plane relative to a reference plane. For an inclination between zero and ninety degrees, we call this a prograde orbit; for ninety degrees, a polar orbit; and for greater than ninety degrees, a retrograde orbit. Eccentricity $$e$$ is a measure of how far the orbit is from being a perfect circle. It is measured as the square root of one minus the ratio of the squares of the semi-minor axis to the semi-major axis of the ellipse. For an eccentricity of zero, we have a perfect circle; for between zero and one, we have an ellipse; and for greater than one, we have a hyperbola, or an unbound orbit. 
 
 <p align="center">
-  <img src="/assets/images/eccentricity_and_inclination.png" alt="Diagrams of eccentricity and inclination">
+  <img src="/assets/images/eccentricity_and_inclination.png" alt="Diagrams of eccentricity and inclination">style="max-width: 100%; height: auto;">
 </p>
 
 It is now simple enough to compute the 3D visualization for the moving planets with eccentricities and inclinations accounted for, using Kepler’s equation to solve for where along the ellipse the object current is and saving the vector path for the planet along its orbit. Below is an animation showing this 3D model of a star system:
 
 <p align="center">
-  <img src="/assets/gifs/orbit_with_occlusion.gif" alt="3D animation of planet orbits">
+  <img src="/assets/gifs/orbit_with_occlusion.gif" alt="3D animation of planet orbits">style="max-width: 100%; height: auto;">
 </p>
 
 Now, we can generate simulated data like that captured from major exoplanet search satellites. There are several satellites which have discovered or are planned to discover exoplanets. The most famous and most prominent is the Kepler Space Telescope, active from 2009-2018. This venerable mission was aimed at measuring the frequency of Earth-like planets in the habitable zone around stars. Using the transit method, it discovered around 2700 exoplanets in the Cygnus-Lyra region. After Kepler was TESS, or the Transiting Exoplanet Survey Satellite, launched in 2018 and still active today. Its mission was to survey the entire sky, but especially focused on closer and brighter stars, which would make spectroscopic follow-up easier. Then there is CHEOPS, or CHaracterising ExOPlanet Satellite, launched by the ESA (European Space Agency) in 2019 and still currently active. And finally, there is the Roman Space Telescope, which is planned to be launched in 2027. This one would use microlensing to discover new planets and present an exciting avenue for future searches. There are a few others which don’t necessarily use the transit method as much and don’t have the same mission of only detecting exoplanets, instead using exciting methods like astrometry, infrared imaging, or even asteroseismology, but I won’t examine them for the purposes outlined here.
