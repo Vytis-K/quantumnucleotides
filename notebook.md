@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Notebook
-permalink: /notebook/
+title: Working Notes
+permalink: /working-notes/
 ---
 
-# Notebook
+# Working Notes
 
 Coming soon...
