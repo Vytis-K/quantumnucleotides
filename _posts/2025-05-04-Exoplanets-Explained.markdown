@@ -19,7 +19,7 @@ Astronomers usually use two main methods of detecting exoplanets, although there
 This wobbling produces a period redshift and blueshift in the star’s spectrum lines. We measure this quantity along the line of sight at which we observe the system. What we measure in practice is the radial velocity, which is the observed change in the star’s velocity along the line of sight due to the orbiting planet:
 
 $$
-vr(t)=Kcos⁡(ωt+ϕ)v_r(t) = K \cos(\omega t + \phi)
+v_r(t) = K \cos(\omega t + \phi)
 $$
 
 Where:
