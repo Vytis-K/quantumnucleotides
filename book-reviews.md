@@ -4,6 +4,6 @@ title: Book Reviews
 permalink: /book-reviews/
 ---
 
-# Media Reviews
+# Book Reviews
 
 Coming soon...
