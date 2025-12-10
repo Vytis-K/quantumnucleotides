@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Media Reviews
-permalink: /media-reviews/
+title: Book Reviews
+permalink: /book-reviews/
 ---
 
 # Media Reviews

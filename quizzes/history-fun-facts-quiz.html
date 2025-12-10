@@ -1,0 +1,132 @@
+---
+layout: default
+title: History Fun Facts Quiz
+permalink: /quizzes/history-fun-facts-quiz.html
+---
+
+<h1>🧠 History Fun Facts Quiz</h1>
+<p><strong>Question 1 of 10:</strong></p>
+
+<div class="quiz-question">
+  <p><strong>Which influential U.S. senator was most associated with the Aldrich Plan, a precursor to the Federal Reserve Act of 1913?</strong></p>
+
+  <form class="quiz-form" onsubmit="return checkAnswer(event)">
+    <label class="quiz-option">
+      <input type="radio" name="question1" value="A">
+      A. Robert La Follette
+    </label>
+    <label class="quiz-option">
+      <input type="radio" name="question1" value="B">
+      B. William Jennings Bryan
+    </label>
+    <label class="quiz-option">
+      <input type="radio" name="question1" value="C">
+      C. Nelson W. Aldrich
+    </label>
+    <label class="quiz-option">
+      <input type="radio" name="question1" value="D">
+      D. Henry Cabot Lodge
+    </label>
+    <label class="quiz-option">
+      <input type="radio" name="question1" value="E">
+      E. Carter Glass
+    </label>
+
+    <button type="submit" class="quiz-submit">Confirm</button>
+    <div class="quiz-feedback" id="feedback"></div>
+  </form>
+</div>
+
+<style>
+.quiz-question {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quiz-option {
+  display: block;
+  margin: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quiz-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz-submit {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3366cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quiz-submit:hover {
+  background-color: #254a91;
+}
+
+.quiz-feedback {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.correct {
+  border: 2px solid #28a745;
+  background-color: #e6ffed;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.incorrect {
+  border: 2px solid #dc3545;
+  background-color: #ffe6e6;
+  border-radius: 6px;
+  padding: 10px;
+}
+</style>
+
+<script>
+function checkAnswer(event) {
+  event.preventDefault();
+  const options = document.getElementsByName('question1');
+  const feedback = document.getElementById('feedback');
+  let selected = null;
+
+  for (const opt of options) {
+    if (opt.checked) {
+      selected = opt.value;
+      break;
+    }
+  }
+
+  if (!selected) {
+    feedback.innerHTML = "<span class='incorrect'>Please select an answer.</span>";
+    return false;
+  }
+
+  const correctAnswer = "C";
+
+  if (selected === correctAnswer) {
+    feedback.innerHTML = "<span class='correct'>Correct! Nelson W. Aldrich was the primary author of the Aldrich Plan, which heavily influenced the creation of the Federal Reserve.</span>";
+  } else {
+    feedback.innerHTML = "<span class='incorrect'>Incorrect. The correct answer is C. Nelson W. Aldrich, who chaired the National Monetary Commission and crafted the Aldrich Plan.</span>";
+  }
+
+  // Lock options after submission
+  for (const opt of options) {
+    opt.disabled = true;
+  }
+
+  document.querySelector(".quiz-submit").disabled = true;
+  return false;
+}
+</script>
